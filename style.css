@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root {
+  --bg-color: #3a4764;
+  --toggle-bg: #232c43;
+  --screen-bg: #182034;
+  --keypad-bg: #232c43;
+
+  --reset-delete-bg: #637097;
+  --reset-delete-shadow: #404e72;
+  --reset-delete-hover: #a2b2e1;
+
+  --equal-bg: #d03f2f;
+  --equal-shadow: #93261a;
+  --equal-hover: #f96b5b;
+
+  --key-btn: #eae3dc;
+  --key-btn-shadow: #b4a597;
+
+  --toggle-btn: #d03f2f;
+  --toggle-btnHover: #f96b5b;
+
+  --dark-text: #444b5a;
+  --white-text: #ffffff;
+}
+
+body.light {
+  --bg-color: #e6e6e6;
+  --toggle-bg: #d1cccc;
+  --screen-bg: #ededed;
+  --keypad-bg: #d1cccc;
+
+  --reset-delete-bg: #377f86;
+  --reset-delete-shadow: #1b5f65;
+  --reset-delete-hover: #62b5bc;
+
+  --equal-bg: #ca5502;
+  --equal-shadow: #893901;
+  --equal-hover: #ff8a38;
+
+  --key-btn: #e5e4e1;
+  --key-btn-shadow: #a69d91;
+
+  --toggle-btn: #c85402;
+  --toggle-btnHover: #ff8a38;
+
+  --dark-text: #35352c;
+  --white-text: #ffffff;
+
+  --toggle-switch: #d2cdcd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.calculator {
+  width: min(90%, 54rem);
+  height: 64rem;
+  margin: auto;
+}
+
+.calculator-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.title {
+  font-size: 3.2rem;
+}
+
+.toggle-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-box p {
+  margin-right: 2.1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 7.1rem;
+  height: 2.6rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--toggle-bg);
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  height: 1.6rem;
+  width: 1.6rem;
+  left: 4px;
+  bottom: 5px;
+  background-color: var(--toggle-btn);
+  transition: 0.4s;
+}
+
+.slider:hover::before {
+  background-color: var(--toggle-btnHover);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--toggle-switch);
+}
+
+input:checked + .slider {
+  background-color: var(--toggle-switch);
+}
+
+input:checked + .slider::before {
+  transform: translateX(4.9rem);
+}
+
+.slider.round {
+  border-radius: 3.4rem;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.calculator-display {
+  background-color: var(--screen-bg);
+  height: 12.8rem;
+  border-radius: 1rem;
+  margin-block: 3.2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.display-title {
+  overflow-x: auto;
+  font-size: 4.8rem;
+  padding-inline: 3.2rem;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2.4rem;
+  background-color: var(--keypad-bg);
+  padding: 3.2rem;
+  border-radius: 1rem;
+}
+
+button {
+  background-color: var(--key-btn);
+  color: var(--dark-text);
+  border: none;
+  font-family: inherit;
+  font-size: 3.2rem;
+  line-height: 3.5rem;
+  border-radius: 1rem;
+  height: 6.4rem;
+  box-shadow: inset 0px -4px 0px var(--key-btn-shadow);
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--white-text);
+}
+
+.delete,
+.reset {
+  background-color: var(--reset-delete-bg);
+  box-shadow: inset 0px -4px 0px var(--reset-delete-shadow);
+}
+
+.delete,
+.reset,
+.equal-sign {
+  color: var(--white-text);
+  font-size: 2rem;
+}
+
+.equal-sign {
+  background-color: var(--equal-bg);
+  box-shadow: inset 0px -4px 0px var(--equal-shadow);
+  grid-column: 3 / span 2;
+}
+
+.delete:hover,
+.reset:hover {
+  background-color: var(--reset-delete-hover);
+}
+
+.equal-sign:hover {
+  background-color: var(--equal-hover);
+}
+
+.reset {
+  grid-column: 1 / span 2;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 10px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(0, 0%, 79%);
+}
+
+@media screen and (max-width: 400px) {
+  .delete,
+  .reset,
+  .equal-sign {
+    font-size: 1.6rem;
+  }
+}

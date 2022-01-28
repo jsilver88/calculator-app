@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="calculator-title">
+        <h1 class="title">calc</h1>
+        <div class="toggle-box">
+          <p>Theme</p>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="calculator-display">
+        <h1 class="display-title">0</h1>
+      </div>
+
+      <div class="calculator-buttons">
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button class="delete" id="delete-btn">DEL</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button class="operator" value="+">+</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button class="operator" value="-">-</button>
+        <button class="decimal" value=".">.</button>
+        <button value="0">0</button>
+        <button class="operator" value="/">/</button>
+        <button class="operator" value="*">x</button>
+        <button class="reset" id="reset-btn">RESET</button>
+        <button class="equal-sign operator" value="=">=</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.jaredsilver.io" target="_blank">Jared Silver</a>.
+    </div>
+  </body>
+</html>
